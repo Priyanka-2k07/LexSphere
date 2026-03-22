@@ -1,0 +1,174 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+    --primary-bg: #0b1c2d;
+    --secondary-bg: #081522;
+    --gold: #c9a227;
+    --card-bg: rgba(255,255,255,0.05);
+}
+
+/* ================= GLOBAL ================= */
+body {
+    background: linear-gradient(135deg, #0b1c2d, #081522);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.custom-navbar {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.brand-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--gold) !important;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* ================= BUTTON ================= */
+.btn-gold {
+    background: var(--gold);
+    color: black;
+    border-radius: 30px;
+    padding: 8px 20px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-gold:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* ================= HERO ================= */
+.hero-section {
+    padding: 120px 0;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+}
+
+.hero-title span {
+    color: var(--gold);
+}
+
+.hero-subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #dcdcdc;
+}
+
+/* Glass Search */
+.search-wrapper {
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.search-input,
+.role-select {
+    border-radius: 30px;
+    border: none;
+}
+
+/* ================= FEATURE CARDS ================= */
+.feature-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.4s;
+    border: 1px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(201,162,39,0.2);
+}
+
+/* ================= AI SECTION ================= */
+.ai-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.ai-box {
+    background: rgba(255,255,255,0.06);
+    padding: 40px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.ai-box:hover {
+    box-shadow: 0 10px 25px rgba(201,162,39,0.3);
+}
+
+/* ================= WORKFLOW TIMELINE ================= */
+.timeline {
+    position: relative;
+    margin-top: 60px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: var(--gold);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+}
+
+.timeline-step {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+}
+
+.timeline-step.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-step.right {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 25px;
+    right: -9px;
+}
+
+.timeline-step.right .timeline-dot {
+    left: -9px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #050d16;
+    padding: 30px 0;
+    margin-top: 80px;
+}

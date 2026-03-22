@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LexSphere | Lawyer Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    color: white;
+    background: linear-gradient(-45deg, #0b1c2d, #142c44, #1c3d5a, #0f2538);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* LEFT SECTION */
+.left {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: slideInLeft 1.2s ease forwards;
+}
+
+.left h1 {
+    font-size: 45px;
+    color: gold;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.left p {
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* RIGHT SECTION */
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Box */
+.login-box {
+    width: 400px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: gold;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 8px gold;
+    transform: scale(1.02);
+}
+
+/* Password Toggle */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #ddd;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn {
+    background: gold;
+    color: #0b1c2d;
+}
+
+.login-btn:hover {
+    background: #ffd700;
+    box-shadow: 0 0 20px gold;
+    transform: translateY(-2px);
+}
+
+.register-btn {
+    margin-top: 12px;
+    background: transparent;
+    border: 1px solid gold;
+    color: gold;
+}
+
+.register-btn:hover {
+    background: gold;
+    color: #0b1c2d;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .left { display: none; }
+    .login-box { width: 90%; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+    <h1>LexSphere</h1>
+    <p>Secure Access for Legal Professionals.<br>
+    Manage cases. Connect with clients. Build trust.</p>
+</div>
+
+<div class="right">
+    <div class="login-box">
+        <h2>Lawyer Login</h2>
+
+        <form>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" required>
+            </div>
+
+            <div class="input-group password-container">
+                <label>Password</label>
+                <input type="password" id="password" required>
+                <span class="toggle-password" onclick="togglePassword()">Show</span>
+            </div>
+
+            <button type="submit" class="btn login-btn">Login</button>
+            <button type="button" class="btn register-btn">Register as Lawyer</button>
+        </form>
+    </div>
+</div>
+
+</div>
+
+<script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    const toggle = document.querySelector(".toggle-password");
+
+    if (password.type === "password") {
+        password.type = "text";
+        toggle.textContent = "Hide";
+    } else {
+        password.type = "password";
+        toggle.textContent = "Show";
+    }
+}
+</script>
+
+</body>
+</html>
